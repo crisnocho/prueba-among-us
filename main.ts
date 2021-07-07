@@ -8,9 +8,30 @@ namespace SpriteKind {
     export const intro4 = SpriteKind.create()
     export const intro5 = SpriteKind.create()
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . d . . . . . . . . . 
+        . . . . . . d d . . . . . . . . 
+        . . . . . d d d d . . . . . . . 
+        . . . . . d d d d d 2 . . . . . 
+        . . . . . d d d d . . 2 . . . . 
+        . . . . . d d d d d . . . . . . 
+        . . . . . d d d d . . . . . . . 
+        . . . . . d d d d d 2 . . . . . 
+        . . . . . d d d d . . 2 . . . . 
+        . . . . 4 4 4 4 4 4 . . . . . . 
+        . . . . . . 4 4 . . . . . . . . 
+        . . . . . . 4 4 . . . . . . . . 
+        . . . . . . 4 . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, 0, -60)
+})
 function inicio () {
     effects.starField.startScreenEffect()
     pause(2000)
+    info.setScore(0)
     mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -30,6 +51,7 @@ function inicio () {
         . . . f f f . . f f f . . . . . 
         `, SpriteKind.Player)
     controller.moveSprite(mySprite, 100, 100)
+    mySprite.setStayInScreen(true)
 }
 function introduccion () {
     effects.starField.startScreenEffect()
@@ -254,6 +276,11 @@ function introduccion () {
     story.printText("Fuiste eyectado ahora debes continuar tu viaje por el espacio", 90, 10)
     pause(2000)
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy()
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
 let asteroide: Sprite = null
 let enemigo: Sprite = null
 let mySprite6: Sprite = null
@@ -263,6 +290,7 @@ let mySprite2: Sprite = null
 let mySprite4: Sprite = null
 let mySprite7: Sprite = null
 let mySprite: Sprite = null
+let projectile: Sprite = null
 introduccion()
 inicio()
 game.onUpdate(function () {
