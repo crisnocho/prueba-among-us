@@ -281,6 +281,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     otherSprite.destroy()
     info.changeScoreBy(1)
 })
+let mySprite8: Sprite = null
 let asteroide: Sprite = null
 let enemigo: Sprite = null
 let mySprite6: Sprite = null
@@ -367,4 +368,100 @@ game.onUpdateInterval(2000, function () {
         `, SpriteKind.Asteroide)
     asteroide.setPosition(randint(5, 155), 0)
     asteroide.setVelocity(0, 50)
+})
+game.onUpdateInterval(30000, function () {
+    mySprite8 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f . . . . . . . 
+        . . . f 4 4 4 4 4 f . . . . . . 
+        . . f 4 4 4 4 f f f f . . . . . 
+        . . f 4 4 4 f d d d d f . . . . 
+        f f f 4 4 f d d d d d d f . . . 
+        f 4 f 4 4 f d d d d d d f . . . 
+        f 4 f 4 4 4 f d d d d f . . . . 
+        f 4 f 4 4 4 4 f f f f f . . . . 
+        f 4 f 4 4 4 4 4 4 4 4 f . . . . 
+        f 4 f 4 4 4 4 4 4 4 4 f . . . . 
+        f f f 4 4 4 4 4 4 4 4 f . . . . 
+        . . f 4 4 4 f f 4 4 4 f . . . . 
+        . . f 4 4 4 f f 4 4 4 f . . . . 
+        . . . f f f . . f f f . . . . . 
+        `, SpriteKind.intro5)
+    animation.runImageAnimation(
+    mySprite8,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . f f f f f . . . . . . . . 
+        . . f 4 4 4 4 4 f . . . . . . . 
+        . . f 4 4 4 f f f f . . . . . . 
+        . . f 4 4 f d d d d f . . . . . 
+        f f f 4 f d d d d d d f . . . . 
+        f 4 f 4 f d d d d d d f . . . . 
+        f 4 f 4 4 f d d d d f . . . . . 
+        f 4 f 4 4 4 f f f f f . . . . . 
+        f 4 f 4 4 4 4 4 4 4 f . . . . . 
+        f f f 4 4 4 4 4 4 4 f . . . . . 
+        . . f 4 4 4 f f 4 4 f . . . . . 
+        . . f 4 4 4 f f 4 4 f . . . . . 
+        . . . f f f . . f f . . . . . . 
+        `,img`
+        . . . f f f f f f . . . . . . . 
+        . . . f 4 4 4 4 f . . . . . . . 
+        . f f f f f f f f f f f . . . . 
+        f 4 4 4 4 4 4 4 4 4 4 4 f . . . 
+        f 4 4 4 4 4 4 f f 4 4 4 f . . . 
+        f 4 4 4 4 4 f d d f 4 4 f . . . 
+        . f f 4 4 f d d d d f 4 f . . . 
+        . f f 4 4 f d d d d f 4 f . . . 
+        f 4 4 4 4 f d d d d f f . . . . 
+        f 4 4 4 4 f d d d d f . . . . . 
+        . f f f f f f d d f . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . f f . . f f f . . . 
+        . . . . . f 4 4 f f 4 4 4 f . . 
+        . . . . . f 4 4 f f 4 4 4 f . . 
+        . . . . . f 4 4 4 4 4 4 4 f f f 
+        . . . . . f 4 4 4 4 4 4 4 f 4 f 
+        . . . . . f f f f f 4 4 4 f 4 f 
+        . . . . . f d d d d f 4 4 f 4 f 
+        . . . . f d d d d d d f 4 f 4 f 
+        . . . . f d d d d d d f 4 f f f 
+        . . . . . f d d d d f 4 4 f . . 
+        . . . . . . f f f f 4 4 4 f . . 
+        . . . . . . . f 4 4 4 4 4 f . . 
+        . . . . . . . . f f f f f . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . f d d f f f f f f . 
+        . . . . . f d d d d f 4 4 4 4 f 
+        . . . . f f d d d d f 4 4 4 4 f 
+        . . . f 4 f d d d d f 4 4 f f . 
+        . . . f 4 f d d d d f 4 4 f f . 
+        . . . f 4 4 f d d f 4 4 4 4 4 f 
+        . . . f 4 4 4 f f 4 4 4 4 4 4 f 
+        . . . f 4 4 4 4 4 4 4 4 4 4 4 f 
+        . . . . f f f f f f f f f f f . 
+        . . . . . . . f 4 4 4 4 f . . . 
+        . . . . . . . f f f f f f . . . 
+        `],
+    200,
+    true
+    )
+    mySprite8.setPosition(6, randint(10, 150))
+    mySprite8.setVelocity(20, -10)
 })
