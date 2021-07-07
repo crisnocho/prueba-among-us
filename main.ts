@@ -6,6 +6,7 @@ namespace SpriteKind {
     export const BOTON_A = SpriteKind.create()
     export const intro3 = SpriteKind.create()
     export const intro4 = SpriteKind.create()
+    export const intro5 = SpriteKind.create()
 }
 function inicio () {
     effects.starField.startScreenEffect()
@@ -32,7 +33,101 @@ function inicio () {
 }
 function introduccion () {
     effects.starField.startScreenEffect()
-    pause(2000)
+    pause(5000)
+    mySprite7 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f . . . . . . . 
+        . . . f 4 4 4 4 4 f . . . . . . 
+        . . f 4 4 4 4 f f f f . . . . . 
+        . . f 4 4 4 f d d d d f . . . . 
+        f f f 4 4 f d d d d d d f . . . 
+        f 4 f 4 4 f d d d d d d f . . . 
+        f 4 f 4 4 4 f d d d d f . . . . 
+        f 4 f 4 4 4 4 f f f f f . . . . 
+        f 4 f 4 4 4 4 4 4 4 4 f . . . . 
+        f 4 f 4 4 4 4 4 4 4 4 f . . . . 
+        f f f 4 4 4 4 4 4 4 4 f . . . . 
+        . . f 4 4 4 f f 4 4 4 f . . . . 
+        . . f 4 4 4 f f 4 4 4 f . . . . 
+        . . . f f f . . f f f . . . . . 
+        `, SpriteKind.intro5)
+    animation.runImageAnimation(
+    mySprite7,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . f f f f f . . . . . . . . 
+        . . f 4 4 4 4 4 f . . . . . . . 
+        . . f 4 4 4 f f f f . . . . . . 
+        . . f 4 4 f d d d d f . . . . . 
+        f f f 4 f d d d d d d f . . . . 
+        f 4 f 4 f d d d d d d f . . . . 
+        f 4 f 4 4 f d d d d f . . . . . 
+        f 4 f 4 4 4 f f f f f . . . . . 
+        f 4 f 4 4 4 4 4 4 4 f . . . . . 
+        f f f 4 4 4 4 4 4 4 f . . . . . 
+        . . f 4 4 4 f f 4 4 f . . . . . 
+        . . f 4 4 4 f f 4 4 f . . . . . 
+        . . . f f f . . f f . . . . . . 
+        `,img`
+        . . . f f f f f f . . . . . . . 
+        . . . f 4 4 4 4 f . . . . . . . 
+        . f f f f f f f f f f f . . . . 
+        f 4 4 4 4 4 4 4 4 4 4 4 f . . . 
+        f 4 4 4 4 4 4 f f 4 4 4 f . . . 
+        f 4 4 4 4 4 f d d f 4 4 f . . . 
+        . f f 4 4 f d d d d f 4 f . . . 
+        . f f 4 4 f d d d d f 4 f . . . 
+        f 4 4 4 4 f d d d d f f . . . . 
+        f 4 4 4 4 f d d d d f . . . . . 
+        . f f f f f f d d f . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . f f . . f f f . . . 
+        . . . . . f 4 4 f f 4 4 4 f . . 
+        . . . . . f 4 4 f f 4 4 4 f . . 
+        . . . . . f 4 4 4 4 4 4 4 f f f 
+        . . . . . f 4 4 4 4 4 4 4 f 4 f 
+        . . . . . f f f f f 4 4 4 f 4 f 
+        . . . . . f d d d d f 4 4 f 4 f 
+        . . . . f d d d d d d f 4 f 4 f 
+        . . . . f d d d d d d f 4 f f f 
+        . . . . . f d d d d f 4 4 f . . 
+        . . . . . . f f f f 4 4 4 f . . 
+        . . . . . . . f 4 4 4 4 4 f . . 
+        . . . . . . . . f f f f f . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . f d d f f f f f f . 
+        . . . . . f d d d d f 4 4 4 4 f 
+        . . . . f f d d d d f 4 4 4 4 f 
+        . . . f 4 f d d d d f 4 4 f f . 
+        . . . f 4 f d d d d f 4 4 f f . 
+        . . . f 4 4 f d d f 4 4 4 4 4 f 
+        . . . f 4 4 4 f f 4 4 4 4 4 4 f 
+        . . . f 4 4 4 4 4 4 4 4 4 4 4 f 
+        . . . . f f f f f f f f f f f . 
+        . . . . . . . f 4 4 4 4 f . . . 
+        . . . . . . . f f f f f f . . . 
+        `],
+    200,
+    true
+    )
+    mySprite7.setPosition(6, 101)
+    mySprite7.setVelocity(20, -10)
     mySprite4 = sprites.create(img`
         ..........................................................................................
         ..........................................................................................
@@ -166,6 +261,7 @@ let mySprite5: Sprite = null
 let mySprite3: Sprite = null
 let mySprite2: Sprite = null
 let mySprite4: Sprite = null
+let mySprite7: Sprite = null
 let mySprite: Sprite = null
 introduccion()
 inicio()
